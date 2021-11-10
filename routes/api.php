@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SatuanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,10 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
 	Route::post('/role', [RoleController::class, 'store'])->middleware('can:peran-tambah');
 	Route::put('/role/{id}', [RoleController::class, 'update'])->middleware('can:peran-ubah');
 	Route::delete('/role/{id}',  [RoleController::class, 'destroy'])->middleware('can:peran-hapus');
+	
+	Route::get('/satuan-grid', [SatuanController::class, 'grid']);
+	Route::get('/satuan/{id}', [SatuanController::class, 'show']);
+	Route::post('/satuan', [SatuanController::class, 'store']);
+	Route::put('/satuan/{id}', [SatuanController::class, 'update']);
+	Route::delete('/satuan/{id}', [SatuanController::class, 'destroy']);
 });
