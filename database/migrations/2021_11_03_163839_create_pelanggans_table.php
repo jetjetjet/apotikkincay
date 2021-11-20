@@ -23,7 +23,7 @@ class CreatePelanggansTable extends Migration
             $table->date('tgl_lahir')->nullable();
             $table->timestamps();
             $table->bigInteger('created_by');
-            $table->bigInteger('updated_by');
+            $table->bigInteger('updated_by')->nullable();
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductLogsTable extends Migration
+class CreateStokLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateProductLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_log', function (Blueprint $table) {
+        Schema::create('stok_log', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id');
             $table->bigInteger('reference_id');
@@ -32,6 +32,6 @@ class CreateProductLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_log');
+        Schema::dropIfExists('stok_log');
     }
 }

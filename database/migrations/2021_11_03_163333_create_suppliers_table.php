@@ -21,7 +21,7 @@ class CreateSuppliersTable extends Migration
             $table->string('alamat')->nullable();
             $table->timestamps();
             $table->bigInteger('created_by');
-            $table->bigInteger('updated_by');
+            $table->bigInteger('updated_by')->nullable();
         });
     }
 

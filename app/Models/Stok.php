@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Stok extends Model
 {
     use HasFactory;
+    protected $table = 'stok';
+    protected $fillable = [
+      'product_id',
+      'reference_id',
+      'type',
+      'qty',
+      'tgl_stok',
+    ];
 }
