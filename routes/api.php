@@ -9,10 +9,12 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\MerkController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReturTransaksiController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\StokController;
 use App\Http\Controllers\SupplierController;
+use App\Models\ReturTransaksi;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,4 +85,10 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
   Route::post('/stok', [StokController::class, 'store']);
   Route::put('/stok/{id}', [StokController::class, 'update']);
   Route::delete('/stok/{id}', [StokController::class, 'destroy']);
+
+  Route::get('/returtransaksi-grid', [ReturTransaksiController::class, 'grid']);
+  Route::get('/returtransaksi/{id}', [ReturTransaksiController::class, 'show']);
+  Route::post('/returtransaksi', [ReturTransaksiController::class, 'store']);
+  Route::put('/returtransaksi/{id}', [ReturTransaksiController::class, 'update']);
+  Route::delete('/returtransaksi/{id}', [ReturTransaksiController::class, 'destroy']);
 });
