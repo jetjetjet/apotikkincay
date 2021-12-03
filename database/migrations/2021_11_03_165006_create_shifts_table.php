@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class CreateShiftsTable extends Migration
 {
@@ -28,7 +29,7 @@ class CreateShiftsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
             $table->bigInteger('created_by');
-            $table->bigInteger('updated_by');
+            $table->bigInteger('updated_by')->nullable();
             $table->bigInteger('deleted_by')->nullable();
             $table->string('deleted_remark')->nullable();
         });

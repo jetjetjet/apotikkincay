@@ -12,6 +12,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReturTransaksiController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SatuanController;
+use App\Http\Controllers\ShiftController;
 use App\Http\Controllers\StokController;
 use App\Http\Controllers\SupplierController;
 use App\Models\ReturTransaksi;
@@ -91,4 +92,10 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
   Route::post('/returtransaksi', [ReturTransaksiController::class, 'store']);
   Route::put('/returtransaksi/{id}', [ReturTransaksiController::class, 'update']);
   Route::delete('/returtransaksi/{id}', [ReturTransaksiController::class, 'destroy']);
+
+  Route::get('/shift-grid', [ShiftController::class, 'grid']);
+  Route::get('/shift/{id}', [ShiftController::class, 'show']);
+  Route::post('/shift', [ShiftController::class, 'store']);
+  Route::put('/shift/{id}', [ShiftController::class, 'update']);
+  Route::delete('/shift/{id}', [ShiftController::class, 'destroy']);
 });
